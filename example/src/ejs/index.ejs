@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>home | example website</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="example website">
+  <meta name="language" content="ja">
+  <meta itemprop="description" content="example website">
+  <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+  <div class="crossfade">
+    <figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-6 col-sm-6 col-xs-12">
+        <div class="page-header">
+          <h1>Home</h1>
+          <div class="description">exsample</div>
+        </div>
+      </div>
+      <div class="col-sm-offset-6 col-sm-6 col-xs-12 col-xs-12">
+        <div style="margin-bottom: 10px">
+          <div style="line-height: 50px">
+            <a href="https://github.com/tkosuga" target="_blank" class="social-icon btn btn-default">
+              <i class="fa fa-lg fa-github"></i> GitHub
+            </a>
+            <a href="https://twitter.com/tkosuga" target="_blank" class="social-icon btn btn-default">
+              <i class="fa fa-lg fa-twitter"></i> Twitter
+            </a>
+            <a href="http://qiita.com/tkosuga@github" target="_blank" class="social-icon btn btn-default">
+               Qiita
+            </a>
+            <a href="https://jsfiddle.net/user/tkosuga/fiddles/" target="_blank" class="social-icon btn btn-default">
+              <i class="fa fa-lg fa-jsfiddle "></i> jsfiddle
+            </a>
+            <a href="http://webhack.hatenablog.com/" target="_blank" class="social-icon btn btn-default">
+              <i class="fa fa-lg fa-rss"></i> ブログ
+            </a>
+            <a href="https://www.instagram.com/m1kothecat/" target="_blank" class="social-icon btn btn-default">
+              <i class="fa fa-lg fa-instagram "></i> みーこのInstagram
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <% if (buildEnv == 'production') { %>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script src="index.js"></script>
+  <% } else { %>
+    <link href="index.sass.compiled.css" rel="stylesheet" type="text/css" />
+    <script src="index.es.compiled.js"></script>
+  <% } %>
+
+</body>
+</html>

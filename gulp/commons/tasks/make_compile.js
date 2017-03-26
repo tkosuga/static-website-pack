@@ -1,5 +1,5 @@
 const runSequence = require('run-sequence');
-
-module.exports = (...args) => {
-  runSequence(...args)
-}
+//
+// `make compile`にあたる複数taskをrunSequenceを利用して連続実行します。
+//
+module.exports = (config) => (...args) => runSequence(...args)

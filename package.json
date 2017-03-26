@@ -1,0 +1,39 @@
+{
+  "name": "static-website-pack",
+  "version": "0.0.1",
+  "description": "Standard static website building toolkit like make command by node.js + gulp",
+  "main": "",
+  "scripts": {
+    "task": "gulp"
+  },
+  "author": "tkosuga",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-ejs": "^3.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-html-minifier": "^0.1.8",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-lint": "^1.3.2",
+    "gulp-touch": "^1.0.1",
+    "gulp-uglify": "^2.1.2",
+    "http-server": "^0.9.0",
+    "iswin": "0.0.2",
+    "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
+    "node-env-file": "^0.1.8",
+    "run-sequence": "^1.2.2",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tkosuga/static-website-pack.git"
+  }
+}

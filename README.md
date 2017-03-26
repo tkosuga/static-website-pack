@@ -1,6 +1,11 @@
 gulp
 ====
 
+gulp --gulpfile exsample/home.js --cwd ./ ejs:compile
+gulp --gulpfile exsample/home.js --cwd ./ sass:compile
+gulp --gulpfile exsample/home.js --cwd ./ make:build
+
+
 サイトをビルドするgulpスクリプトを整備中です。
 
 - gulp/ - gulpスクリプトを保存するフォルダです。
@@ -8,6 +13,9 @@ gulp
     - tasks/ - gulp.taskで利用するスクリプトを細分化して格納しています。
   - config/ - プロジェクト個別の設定ファイルです。
   - xxxx(project name).js - プロジェクト個別のgulpスクリプトです。
+
+
+環境変数に BUILD_MODE を指定して下さい。環境変数にBUILD_MODEが見つからない場合のデフォルト値は 'development' です。
 
 
 ## EJS
