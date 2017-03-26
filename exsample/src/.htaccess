@@ -1,0 +1,19 @@
+<IfModule mod_rewrite.c>
+
+  RewriteEngine On
+
+  RewriteCond %{HTTP:X-Sakura-Forwarded-For} ^$
+  RewriteRule ^(.*)$ https://tkosuga.jp%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^(www\.)?tkosuga\.sakura\.ne\.jp$ [NC]
+  RewriteRule .* https://tkosuga.jp%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTP_HOST} ^(www\.)?tkosuga\.com$ [NC]
+  RewriteRule .* https://tkosuga.jp%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{REQUEST_URI} ^/index.html
+  RewriteRule ^(.*)index.html$ https://tkosuga.jp/$1 [R=301,L]
+
+  RewriteCond %{REQUEST_URI} ^/diet/$
+  RewriteRule .* https://tkosuga.jp/diet/ja.html [R=301,L]
+</IfModule>
