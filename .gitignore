@@ -46,6 +46,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-exsample/build/*
-exsample/dist/*
+example/build
+example/dist
 node_modules

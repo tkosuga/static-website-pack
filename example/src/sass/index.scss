@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+body {
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "Helvetica Neue", Helvetica, "Open Sans", "Arial", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f7f7f7;
+}
+
+.page-header {
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0px 2px 0px #fff;
+}
+
+.social-icon:hover {
+  text-decoration: none;
+}
+
+ul.description {
+  list-style: square;
+}
+
+.description .list-inline li {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 5px;
+  line-height: 30px;
+}
+
+.crossfade> figure {
+  animation: imageAnimation 36s linear infinite 0s;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center center;
+  color: transparent;
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  width: 50%;
+  z-index: 0;
+  box-shadow: 5px 5px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.crossfade> figure:nth-child(1) {
+  background-image: url('img/17009071978_ac2e3718c0_h.jpg');
+}
+
+.crossfade> figure:nth-child(2) {
+  animation-delay: 6s;
+  background-image: url('img/17009289080_0c6d4cc578_h.jpg');
+}
+
+.crossfade> figure:nth-child(3) {
+  animation-delay: 12s;
+  background-image: url('img/17196808915_c4007d467d_h.jpg');
+}
+
+.crossfade> figure:nth-child(4) {
+  animation-delay: 18s;
+  background-image: url('img/17252239025_2a56b9e657_b.jpg');
+}
+
+.crossfade> figure:nth-child(5) {
+  animation-delay: 24s;
+  background-image: url('img/17358966736_e601dae329_b.jpg');
+}
+
+.crossfade> figure:nth-child(6) {
+  animation-delay: 30s;
+  background-image: url('img/17950164425_947b108455_h.jpg');
+}
+
+@keyframes imageAnimation {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  8% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  17% {
+    opacity: 1
+  }
+  25% {
+    opacity: 0
+  }
+  100% {
+    opacity: 0
+  }
+}
+
+@media (max-width: 641px) {
+  body {
+    background-color: #c0c0c0;
+  }
+  h1,
+  h2,
+  .description {
+    color: #fff;
+    text-shadow: 1px 1px 3px #000, -1px -1px 3px #000;
+  }
+  .page-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: none;
+  }
+  .crossfade> figure {
+    width: 100%;
+  }
+}

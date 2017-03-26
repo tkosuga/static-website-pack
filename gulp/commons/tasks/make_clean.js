@@ -1,9 +1,6 @@
-/*
- * `make clean` を行うスクリプトです。
- * buildPath以下とdistPath以下の全てのファイルを削除します。
- */
 const del = require('del');
-
-module.exports = (buildPath, distPath) => {
-  del([`${buildPath}/*`, `${distPath}/*`])
-}
+//
+// `make clean` を行うスクリプトです。
+// 中間生成物のbuildPath以下およびdistPath以下の全ファイルを削除します。
+//
+module.exports = (config) => () => del([`${config.buildPath}/*`, `${config.distPath}/*`])
