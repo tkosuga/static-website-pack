@@ -4,11 +4,17 @@ static-website-pack
 Standard static website building toolkit like make command by node.js + gulp.
 
 ```
+# Clone this project.
 $ git clone https://github.com/tkosuga/static-website-pack.git
+# Install dependency libraries.
 $ npm install
+# Build example project. (ejs -> html, sass -> css, es6 -> js, image -> optimized image)
+$ gulp --gulpfile example/home.js --cwd ./ make:all
+# Build example project by production.
+$ gulp --gulpfile example/home.js --cwd ./ make:all --env production
+# Lunch http-server. Access http://127.0.0.1:8080/.
+$ gulp --gulpfile example/home.js --cwd ./ httpserver
 ```
-
-サイトをビルドするgulpスクリプトを整備中です。
 
 - example
   - build ビルド中の中間生成物を格納するフォルダです。build以下は`make clean`でクリアできます。
@@ -26,74 +32,75 @@ $ npm install
   - home.js gulpのビルドスクリプトです。
 
 環境変数のBUILD_ENVをビルドモードに利用しています。環境変数にBUILD_ENVが見つからない場合のデフォルト値は'development'です。
+引数に `--env production` を付けるとproductionでビルドを行います。
 
 ## EJS
 
 ejsをhtmlにコンパイルするタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ ejs:compile
-gulp --gulpfile example/home.js --cwd ./ ejs:watch
+- gulp --gulpfile example/home.js --cwd ./ ejs:compile
+- gulp --gulpfile example/home.js --cwd ./ ejs:watch
 
 ## SASS
 
 scssをcssにコンパイルするタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ sass:lint
-gulp --gulpfile example/home.js --cwd ./ sass:compile
-gulp --gulpfile example/home.js --cwd ./ sass:watch
+- gulp --gulpfile example/home.js --cwd ./ sass:lint
+- gulp --gulpfile example/home.js --cwd ./ sass:compile
+- gulp --gulpfile example/home.js --cwd ./ sass:watch
 
 ## ES(ESMAScript)
 
 jsをブラウザ用にコンパイルするタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ es:lint
-gulp --gulpfile example/home.js --cwd ./ es:compile
-gulp --gulpfile example/home.js --cwd ./ es:watch
+- gulp --gulpfile example/home.js --cwd ./ es:lint
+- gulp --gulpfile example/home.js --cwd ./ es:compile
+- gulp --gulpfile example/home.js --cwd ./ es:watch
 
 ## HTML (EJS -> HTML)
 
 デプロイする成果物となるhtmlを生成するタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ html:minify
+- gulp --gulpfile example/home.js --cwd ./ html:minify
 
 ## CSS (SASS -> CSS)
 
 デプロイする成果物となるcssを生成するタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ css:minify
-gulp --gulpfile example/home.js --cwd ./ css:concat
+- gulp --gulpfile example/home.js --cwd ./ css:minify
+- gulp --gulpfile example/home.js --cwd ./ css:concat
 
 ## JS (ES -> JS)
 
 デプロイする成果物となるjsを生成するタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ js:minify
-gulp --gulpfile example/home.js --cwd ./ js:concat
+- gulp --gulpfile example/home.js --cwd ./ js:minify
+- gulp --gulpfile example/home.js --cwd ./ js:concat
 
 ## IMG(Image resources)
 
 画像を軽量化するタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ img:compress
+- gulp --gulpfile example/home.js --cwd ./ img:compress
 
 ## MAKE
 
 デプロイする成果物一式を生成するタスクセットです。
 
-gulp --gulpfile example/home.js --cwd ./ make:precompile
-gulp --gulpfile example/home.js --cwd ./ make:compile
-gulp --gulpfile example/home.js --cwd ./ make:build
-gulp --gulpfile example/home.js --cwd ./ make:dist
-gulp --gulpfile example/home.js --cwd ./ make:clean
+- gulp --gulpfile example/home.js --cwd ./ make:prebuild
+- gulp --gulpfile example/home.js --cwd ./ make:compile
+- gulp --gulpfile example/home.js --cwd ./ make:build
+- gulp --gulpfile example/home.js --cwd ./ make:dist
+- gulp --gulpfile example/home.js --cwd ./ make:clean
 
 ## WATCH
 
 ファイル更新に合わせてsass/ejsのコンパイルを行うための常駐型タスクです。
 
-gulp --gulpfile example/home.js --cwd ./ watch
+- gulp --gulpfile example/home.js --cwd ./ watch
 
 ## SERVER
 
 ビルドしたHTMLの表示確認を行うためhttp-serverを起動します。
 
-gulp --gulpfile example/home.js --cwd ./ httpserver
+- gulp --gulpfile example/home.js --cwd ./ httpserver
