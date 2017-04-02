@@ -32,7 +32,7 @@ $ npm run task make:all --env production
 $ npm run task httpserver
 ```
 
-## サンプル説明
+## サンプルのフォルダ構成を説明
 
 - example
   - build ビルド中の中間生成物を格納するフォルダです。build以下は`make clean`でクリアできます。
