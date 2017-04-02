@@ -1,6 +1,6 @@
 'use strict';
 
-const websiteEnv = require(`${process.cwd()}/gulp/website_env`)('example');
+const websiteEnv = require(`${__dirname}/../src/website_env`)('example');
 const config = websiteEnv.config;
 
 const gulp = require('gulp');
@@ -43,7 +43,7 @@ gulp.task('make:build', (callback) => websiteEnv.task('make_build')(
   ['html:minify', 'css:minify', 'js:minify'],
   callback
 ));
-gulp.task('make:dest', (callback) => websiteEnv.task('make_dest')(
+gulp.task('make:dist', (callback) => websiteEnv.task('make_dist')(
   websiteEnv.copy(`${config.buildPath}/index.min.html`, config.distPath, config.dist.htmlFileName),
   websiteEnv.copy(`${config.buildPath}/index.concat.min.css`, config.distPath, config.dist.cssFileName),
   websiteEnv.copy(`${config.buildPath}/index.concat.min.js`, config.distPath, config.dist.jsFileName),
@@ -53,7 +53,7 @@ gulp.task('make:dest', (callback) => websiteEnv.task('make_dest')(
   websiteEnv.copy(`${config.buildPath}/robots.txt`, config.distPath)
 ));
 gulp.task('make:clean', (callback) => websiteEnv.task('make_clean')());
-gulp.task('make:all', (callback) => websiteEnv.task('make_all')('make:clean', 'make:build', 'make:dest', callback));
+gulp.task('make:all', (callback) => websiteEnv.task('make_all')('make:clean', 'make:build', 'make:dist', callback));
 
 gulp.task('watch', ['ejs:watch', 'sass:watch', 'es:watch'], () => {});
 gulp.task('httpserver', (callback) => websiteEnv.httpserver());
