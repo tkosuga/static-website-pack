@@ -1,6 +1,6 @@
 'use strict';
 
-const websiteEnv = require(`${process.cwd()}/gulp/commons/website_env`)('example');
+const websiteEnv = require(`${process.cwd()}/gulp/website_env`)('example');
 const config = websiteEnv.config;
 
 const gulp = require('gulp');
