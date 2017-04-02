@@ -1,10 +1,10 @@
 {
   "name": "static-website-pack",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Standard static website building toolkit like make command by node.js + gulp",
   "main": "",
   "scripts": {
-    "task": "gulp",
+    "task": "gulp --gulpfile example/home.js --cwd ./",
     "test": "mocha"
   },
   "author": "tkosuga",
