@@ -4,11 +4,12 @@
   "description": "Standard static website building toolkit like make command by node.js + gulp",
   "main": "",
   "scripts": {
-    "task": "gulp"
+    "task": "gulp",
+    "test": "mocha"
   },
   "author": "tkosuga",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "browserify": "^14.1.0",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
@@ -31,6 +32,10 @@
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
   },
   "repository": {
     "type": "git",

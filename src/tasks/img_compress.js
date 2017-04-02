@@ -8,7 +8,7 @@ const imagemin = require('gulp-imagemin');
 // see: https://github.com/sindresorhus/gulp-imagemin
 // see: https://github.com/imagemin/imagemin
 //
-module.exports = (config) =>() => {
+module.exports = (config) => () => {
   return gulp.src([`${config.img.directoryPath}/**`])
   .pipe(imagemin({
     progressive: true,

@@ -25,10 +25,10 @@ $ gulp --gulpfile example/home.js --cwd ./ httpserver
     - sass sassを格納するフォルダです。
     - img jpegやpngなど画像ファイルを格納するフォルダです。
     - /(直下) favicon.ico, robots.txt等の個別ファイルを置いています。
-  - config
+  - env
     - development.env 開発環境用のビルドで利用する環境変数を記述するファイルです。
     - production.env リリース環境で利用する環境変数を記述するファイルです。
-    - setting.js ファイル名固定です。プロジェクトの設定を記述するファイルです。
+  - config.js ファイル名固定です。プロジェクトの設定を記述するファイルです。
   - home.js gulpのビルドスクリプトです。
 
 環境変数のBUILD_ENVをビルドモードに利用しています。環境変数にBUILD_ENVが見つからない場合のデフォルト値は'development'です。
